@@ -28,7 +28,9 @@ const Footer = async () => {
 
                 <div className="">
                     <a href='https://github.com/Tajmirul/portfolio-2.0' target='_blank' className="leading-none text-muted-foreground hover:underline hover:text-white">
-                        Design & built by Tajmirul Islam
+                        Design & built by Lorenzo Adacher <br />
+                        Forked from Tajmirul Islam
+                        <br />
 
                         <div className="flex items-center justify-center gap-5 pt-1">
                             <span className='flex items-center gap-2'>

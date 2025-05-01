@@ -28,8 +28,8 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-    title: 'Portfolio - Tajmirul Islam',
-    description: 'Personal portfolio of Tajmirul Islam',
+    title: 'Portfolio - Lorenzo Adacher',
+    description: 'Personal portfolio of Lorenzo Adacher, Visionary Entrepreneur passionate about robotics, AI, and innovation.',
 };
 
 export default function RootLayout({
