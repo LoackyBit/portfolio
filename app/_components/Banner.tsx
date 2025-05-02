@@ -46,8 +46,8 @@ const Banner = () => {
                         <br /> <span className="ml-4">ENTREPRENEUR</span>
                     </h1>
                     <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
-                        Hi! I'm <span className="font-medium text-foreground">Lorenzo</span>.
-                        I'm a 17-year-old visionary entrepreneur, passionate about robotics, artificial intelligence, and building innovative projects that make a difference.
+                        Hi! I&apos;m <span className="font-medium text-foreground">Lorenzo</span>.
+                        I&apos;m a 17-year-old visionary entrepreneur, passionate about robotics, artificial intelligence, and building innovative projects that make a difference.
                     </p>
                     <Button
                         as="link"
