@@ -28,7 +28,7 @@ const Footer = async () => {
 
                 <div className="">
                     <a href='https://github.com/Tajmirul/portfolio-2.0' target='_blank' className="leading-none text-muted-foreground hover:underline hover:text-white">
-                        Design & built by Lorenzo Adacher <br />
+                        Modified by Lorenzo Adacher <br />
                         Forked from Tajmirul Islam
                         <br />
 
