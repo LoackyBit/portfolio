@@ -75,7 +75,7 @@ const AboutMe = () => {
                             <p className="mt-3 slide-up-and-fade">
                                 I have developed and contributed to several technology projects, including video game development, automation systems, and open-source software. My technical skills include programming in C++, Python, and JavaScript, as well as proficiency in video editing and digital content creation using industry-standard tools.                            </p>
                             <p className="mt-3 slide-up-and-fade">
-                                I&apos;m an active participant in national competitions, such as the Italian Space Agency's "LAB2GO" and the Math and Physics Olympiads, and I continuously seek opportunities to expand my knowledge through advanced courses and self-directed study.
+                                I&apos;m an active participant in national competitions, such as the Italian Space Agency&apos;s &quot;LAB2GO&quot; and the Math and Physics Olympiads, and I continuously seek opportunities to expand my knowledge through advanced courses and self-directed study.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
                                 Outside of academics, I am dedicated to personal growth through music, sports, and community engagement. I play the guitar, have a background in competitive swimming and volleyball, and am currently training as a certified lifeguard.
