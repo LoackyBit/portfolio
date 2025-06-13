@@ -13,6 +13,7 @@ export const SOCIAL_LINKS = [
     { name: 'github', url: 'https://github.com/Lod34' },
     { name: 'linkedin', url: 'https://www.linkedin.com/in/lorenzoadacher' },
     { name: 'facebook', url: 'https://www.facebook.com/lorenzo.adacher' },
+    { name: 'blog', url: 'https://lollo-blog.vercel.app/' },
     { name: 'Old Version', url: GENERAL_INFO.oldPortfolio },
 ];
 

@@ -57,7 +57,7 @@ const Banner = () => {
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade"
                     >
-                        Hire Me
+                        Contact Me
                     </Button>
                 </div>
 
