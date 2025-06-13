@@ -5,6 +5,7 @@ import { GENERAL_INFO } from '@/lib/data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { IconBrandGithub } from '@tabler/icons-react';
 import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -49,16 +50,26 @@ const Banner = () => {
                         Hi! I&apos;m <span className="font-medium text-foreground">Lorenzo</span>.
                         I&apos;m a 17-year-old visionary entrepreneur, passionate about robotics, artificial intelligence, and building innovative projects that make a difference.
                     </p>
-                    <Button
-                        as="link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${GENERAL_INFO.email}&su=${GENERAL_INFO.emailSubject}&body=${GENERAL_INFO.emailBody}`}
-                        variant="primary"
-                        className="mt-9 banner-button slide-up-and-fade"
-                    >
-                        Contact Me
-                    </Button>
+                    <div className="flex items-center gap-4 mt-9 banner-button slide-up-and-fade">
+                        <Button
+                            as="link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${GENERAL_INFO.email}&su=${GENERAL_INFO.emailSubject}&body=${GENERAL_INFO.emailBody}`}
+                            variant="primary"
+                            className=""
+                        >
+                            Contact Me
+                        </Button>
+                        <a 
+                            href="https://github.com/Lod34" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:scale-110 hover:-translate-y-2 hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
+                        >
+                            <IconBrandGithub size={40} />
+                        </a>
+                    </div>
                 </div>
 
                 <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">

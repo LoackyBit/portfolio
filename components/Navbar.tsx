@@ -2,8 +2,9 @@
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { MoveUpRight } from 'lucide-react';
+import { IconBrandGithub } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
-import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
+import { GENERAL_INFO } from '@/lib/data';
 
 const COLORS = [
     'bg-yellow-500 text-black',
@@ -34,11 +35,6 @@ const MENU_LINKS = [
     {
         name: 'Blog',
         url: '/#blog',
-    },
-    {
-        name: 'Full Blog',
-        url: 'https://lollo-blog.vercel.app/',
-        external: true,
     },
 ];
 
@@ -88,7 +84,7 @@ const Navbar = () => {
 
             <div
                 className={cn(
-                    'fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-hidden gap-y-14',
+                    'fixed top-0 right-0 h-[100dvh] w-[600px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-hidden gap-y-14',
                     'flex flex-col lg:justify-center py-10',
                     { 'translate-x-0': isMenuOpen },
                 )}
@@ -102,76 +98,35 @@ const Navbar = () => {
                     )}
                 ></div>
 
-                <div className="grow flex md:items-center w-full max-w-[300px] mx-8 sm:mx-auto">
-                    <div className="flex gap-10 lg:justify-between max-lg:flex-col w-full">
-                        <div className="max-lg:order-2">
-                            <p className="text-muted-foreground mb-5 md:mb-8">
-                                SOCIAL
-                            </p>
-                            <ul className="space-y-3">
-                                {SOCIAL_LINKS.map((link) => (
-                                    <li key={link.name}>
-                                        <a
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="text-lg capitalize hover:underline"
-                                        >
-                                            {link.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                <div className="grow flex md:items-center w-full max-w-[500px] mx-8 sm:mx-auto">
+                    <div className="flex justify-center w-full">
                         <div className="">
-                            <p className="text-muted-foreground mb-5 md:mb-8">
+                            <p className="text-muted-foreground mb-8 md:mb-12 text-xl font-medium tracking-wider">
                                 MENU
                             </p>
-                            <ul className="space-y-3">
+                            <ul className="space-y-6">
                                 {MENU_LINKS.map((link, idx) => (
                                     <li key={link.name}>
-                                        {link.external ? (
-                                            <a
-                                                href={link.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="group text-xl flex items-center gap-3"
+                                        <button
+                                            onClick={() => {
+                                                router.push(link.url);
+                                                setIsMenuOpen(false);
+                                            }}
+                                            className="group text-3xl md:text-4xl flex items-center gap-5 font-medium"
+                                        >
+                                            <span
+                                                className={cn(
+                                                    'size-6 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-[200%] transition-all',
+                                                    COLORS[idx],
+                                                )}
                                             >
-                                                <span
-                                                    className={cn(
-                                                        'size-3.5 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-[200%] transition-all',
-                                                        COLORS[idx],
-                                                    )}
-                                                >
-                                                    <MoveUpRight
-                                                        size={8}
-                                                        className="scale-0 group-hover:scale-100 transition-all"
-                                                    />
-                                                </span>
-                                                {link.name}
-                                            </a>
-                                        ) : (
-                                            <button
-                                                onClick={() => {
-                                                    router.push(link.url);
-                                                    setIsMenuOpen(false);
-                                                }}
-                                                className="group text-xl flex items-center gap-3"
-                                            >
-                                                <span
-                                                    className={cn(
-                                                        'size-3.5 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-[200%] transition-all',
-                                                        COLORS[idx],
-                                                    )}
-                                                >
-                                                    <MoveUpRight
-                                                        size={8}
-                                                        className="scale-0 group-hover:scale-100 transition-all"
-                                                    />
-                                                </span>
-                                                {link.name}
-                                            </button>
-                                        )}
+                                                <MoveUpRight
+                                                    size={12}
+                                                    className="scale-0 group-hover:scale-100 transition-all"
+                                                />
+                                            </span>
+                                            {link.name}
+                                        </button>
                                     </li>
                                 ))}
                             </ul>
@@ -179,11 +134,21 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="w-full max-w-[300px] mx-8 sm:mx-auto">
-                    <p className="text-muted-foreground mb-4">GET IN TOUCH</p>
-                    <a href={`mailto:${GENERAL_INFO.email}`}>
-                        {GENERAL_INFO.email}
-                    </a>
+                <div className="w-full max-w-[500px] mx-8 sm:mx-auto">
+                    <p className="text-muted-foreground mb-6 text-lg font-medium tracking-wider">GET IN TOUCH</p>
+                    <div className="flex items-center gap-6">
+                        <a href={`mailto:${GENERAL_INFO.email}`} className="text-lg md:text-xl">
+                            {GENERAL_INFO.email}
+                        </a>
+                        <a 
+                            href="https://github.com/Lod34" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:opacity-80 transition-opacity"
+                        >
+                            <IconBrandGithub size={32} />
+                        </a>
+                    </div>
                 </div>
             </div>
         </>
