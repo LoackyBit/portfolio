@@ -139,7 +139,7 @@ const Blog = () => {
     };
 
     // Blog post card component with animated icon
-    const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
+    const BlogPostCard = ({ post }: { post: BlogPost }) => {
         const externalLinkSVGRef = useRef<SVGSVGElement>(null);
         const { contextSafe } = useGSAP(() => {}, {
             scope: externalLinkSVGRef,
@@ -310,7 +310,7 @@ const Blog = () => {
                             <>
                                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                                     {posts.map((post, index) => (
-                                        <BlogPostCard key={index} post={post} index={index} />
+                                        <BlogPostCard key={index} post={post} />
                                     ))}
                                 </div>
                                 
