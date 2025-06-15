@@ -85,12 +85,25 @@ const Blog = () => {
         { scope: contentRef },
     );
 
-    // Animation function for external link icon
-    const createIconAnimation = (svgRef: React.RefObject<SVGSVGElement>) => {
-        return () => {
-            const arrowLine = svgRef.current?.querySelector('#arrow-line') as SVGPathElement;
-            const arrowCurb = svgRef.current?.querySelector('#arrow-curb') as SVGPathElement;
-            const box = svgRef.current?.querySelector('#box') as SVGPathElement;
+    // Blog post card component with animated icon
+    const BlogPostCard = ({ post }: { post: BlogPost }) => {
+        const externalLinkSVGRef = useRef<SVGSVGElement>(null);
+
+        const { context, contextSafe } = useGSAP(() => {}, {
+            scope: externalLinkSVGRef,
+            revertOnUpdate: true,
+        });
+
+        const handleMouseEnter = contextSafe?.(() => {
+            const arrowLine = externalLinkSVGRef.current?.querySelector(
+                '#arrow-line',
+            ) as SVGPathElement;
+            const arrowCurb = externalLinkSVGRef.current?.querySelector(
+                '#arrow-curb',
+            ) as SVGPathElement;
+            const box = externalLinkSVGRef.current?.querySelector(
+                '#box',
+            ) as SVGPathElement;
 
             gsap.set(box, {
                 opacity: 0,
@@ -109,7 +122,7 @@ const Blog = () => {
             });
 
             const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-            tl.to(svgRef.current, {
+            tl.to(externalLinkSVGRef.current, {
                 autoAlpha: 1,
             })
                 .to(box, {
@@ -129,33 +142,16 @@ const Blog = () => {
                     strokeDashoffset: 0,
                 })
                 .to(
-                    svgRef.current,
+                    externalLinkSVGRef.current,
                     {
                         autoAlpha: 0,
                     },
                     '+=1',
                 );
-        };
-    };
-
-    // Blog post card component with animated icon
-    const BlogPostCard = ({ post }: { post: BlogPost }) => {
-        const externalLinkSVGRef = useRef<SVGSVGElement>(null);
-        const { contextSafe } = useGSAP(() => {}, {
-            scope: externalLinkSVGRef,
-            revertOnUpdate: true,
-        });
-
-        const handleMouseEnter = contextSafe?.(() => {
-            const animateIcon = createIconAnimation(externalLinkSVGRef);
-            animateIcon();
         });
 
         const handleMouseLeave = contextSafe?.(() => {
-            if (externalLinkSVGRef.current) {
-                gsap.killTweensOf(externalLinkSVGRef.current);
-                gsap.set(externalLinkSVGRef.current, { autoAlpha: 0 });
-            }
+            context.kill();
         });
 
         return (
