@@ -141,7 +141,7 @@ const Navbar = () => {
                             {GENERAL_INFO.email}
                         </a>
                         <a 
-                            href="https://github.com/Lod34" 
+                            href="https://github.com/LoackyBit" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:opacity-80 transition-opacity"

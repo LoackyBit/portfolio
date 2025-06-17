@@ -62,7 +62,7 @@ const Banner = () => {
                             Contact Me
                         </Button>
                         <a 
-                            href="https://github.com/Lod34" 
+                            href="https://github.com/LoackyBit" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:scale-110 hover:-translate-y-2 hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
